@@ -10,4 +10,9 @@ class Especialidade extends Model
     use HasFactory;
 
     protected $table = 'especialidade';
+
+    public function medicos()
+    {
+        return $this->belongsToMany(Medico::class);
+    }
 }

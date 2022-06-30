@@ -10,4 +10,9 @@ class Procedimento extends Model
     use HasFactory;
 
     protected $table = 'procedimento';
+
+    public function consultas()
+    {
+        return $this->belongsToMany(Consulta::class);
+    }
 }

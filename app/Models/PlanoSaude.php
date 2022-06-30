@@ -10,4 +10,9 @@ class PlanoSaude extends Model
     use HasFactory;
 
     protected $table = 'plano_saude';
+
+    public function pacientes()
+    {
+        return $this->belongsToMany(Paciente::class);
+    }
 }
