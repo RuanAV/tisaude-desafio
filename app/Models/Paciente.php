@@ -13,11 +13,11 @@ class Paciente extends Model
 
     public function consultas()
     {
-        return $this->belongsToMany(Consulta::class);
+        return $this->hasMany(Consulta::class);
     }
 
-    public function planossaude()
+    public function vinculos()
     {
-        return $this->belongsToMany(PlanoSaude::class);
+        return $this->belongsToMany(Vinculo::class);
     }
 }

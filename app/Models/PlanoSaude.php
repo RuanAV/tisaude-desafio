@@ -11,8 +11,8 @@ class PlanoSaude extends Model
 
     protected $table = 'plano_saude';
 
-    public function pacientes()
+    public function vinculos()
     {
-        return $this->belongsToMany(Paciente::class);
+        return $this->belongsToMany(Vinculo::class);
     }
 }

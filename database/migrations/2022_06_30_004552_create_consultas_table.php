@@ -18,6 +18,8 @@ return new class extends Migration
             $table->date('data');
             $table->time('hora');
             $table->string('particular');
+            $table->foreignId('pac_codigo_id')->constrained('paciente', 'pac_codigo')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('med_codigo_id')->constrained('medico', 'med_codigo')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

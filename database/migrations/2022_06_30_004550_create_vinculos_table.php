@@ -14,7 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::create('vinculos', function (Blueprint $table) {
-            $table->id();
+            $table->id('nr_contrato');
+            $table->foreignId('pac_codigo_id')->constrained('paciente', 'pac_codigo')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('plan_codigo_id')->constrained('plano_saude', 'plan_codigo')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\Medico;
+use App\Models\Paciente;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
@@ -20,7 +22,9 @@ class ConsultaFactory extends Factory
         return [
             'data' => $this->faker->date('Y-m-d'),
             'hora' => $this->faker->time('H:i:s'),
-            'particular' => Str::random(1),
+            'particular' => $this->faker->randomElement([1, 0]),
+            'pac_codigo_id' => Paciente::inRandomOrder()->first()->pac_codigo,
+            'med_codigo_id' => Medico::inRandomOrder()->first()->med_codigo,
         ];
     }
 }

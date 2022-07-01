@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id('med_codigo');
             $table->string('med_nome');
             $table->string('med_crm');
+            $table->foreignId('espec_codigo_id')->constrained('especialidade', 'espec_codigo')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

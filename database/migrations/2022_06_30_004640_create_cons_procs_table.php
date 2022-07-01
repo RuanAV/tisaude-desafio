@@ -14,8 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::create('cons_proc', function (Blueprint $table) {
-            $table->foreignId('proc_codigo')->constrained('procedimento', 'proc_codigo');
-            $table->foreignId('cons_codigo')->constrained('consulta', 'cons_codigo');
+            $table->foreignId('proc_codigo_id')->constrained('procedimento', 'proc_codigo');
+            $table->foreignId('cons_codigo_id')->constrained('consulta', 'cons_codigo');
+            $table->timestamps();
         });
     }
 

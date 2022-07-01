@@ -20,11 +20,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\User::factory(3)->create();
+        \App\Models\User::factory(1)->create();
         \App\Models\Paciente::factory(10)->create();
-        \App\Models\Medico::factory(5)->create();
         \App\Models\PlanoSaude::factory(5)->create();
-        \App\Models\Consulta::factory(20)->create();
 
         $especialdiades = ['Cardiologista', 'Endocrinologista', 'Ortopedista', 'Nefrologista'];
         $procedimentos = [['DRENAGEM TORÁCICA', '100.0'], ['IOT', '200.0'], ['CRICOSTOMIA POR PUNÇÃO', '300.0'], ['ACESSO VENOSO CENTRAL/PROFUNDO', '400.0'], ['CATETERISMO VESICAL', '500.0']];
@@ -41,7 +39,14 @@ class DatabaseSeeder extends Seeder
                 'proc_valor' => $procedimento[1],
             ]);
         }
+
+        \App\Models\Medico::factory(5)->create();
+        \App\Models\Consulta::factory(20)->create();
+        \App\Models\Vinculo::factory(20)->create();
+        \App\Models\ConsProc::factory(35)->create();
+
     }
+
 
 
 }

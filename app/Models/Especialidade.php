@@ -11,7 +11,7 @@ class Especialidade extends Model
 
     protected $table = 'especialidade';
 
-    public function medicos()
+    public function medico()
     {
         return $this->belongsToMany(Medico::class);
     }

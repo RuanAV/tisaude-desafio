@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Especialidade;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
@@ -19,7 +20,8 @@ class MedicoFactory extends Factory
     {
         return [
             'med_nome' => $this->faker->name(),
-            'med_crm' => Str::random(6),
+            'med_crm' => $this->faker->randomNumber(6, true),
+            'espec_codigo_id' => Especialidade::inRandomOrder()->first()->espec_codigo,
 
         ];
     }
