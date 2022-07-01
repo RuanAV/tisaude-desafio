@@ -25,6 +25,7 @@ Route::prefix('v1')->group(function() {
         Route::get('pacientes/{id}', [PacienteController::class, 'getPacienteById']);
         Route::get('pacientes-procedimento/{id}', [PacienteController::class, 'getProcedimentosRealizedByPaciente']);
         Route::get('pacientes-planosaude/{id}', [PacienteController::class, 'getPlanosSaudePaciente']);
+        Route::get('paciente-gasto/{id}', [PacienteController::class, 'getGastoTotalPorPaciente']);
         //plano de saude
         Route::get('planos-saude', [PlanoSaudeController::class, 'index']);
         //medico
@@ -35,6 +36,7 @@ Route::prefix('v1')->group(function() {
         Route::get('especialidades', [EspecialidadeController::class, 'index']);
         //consultas
         Route::get('consultas', [ConsultaController::class, 'index']);
+        Route::get('consulta-valor/{id}', [ConsultaController::class, 'getValorConsulta']);
         //procedimentos
         Route::get('procedimentos', [ProcedimentoController::class, 'index']);
         //extra

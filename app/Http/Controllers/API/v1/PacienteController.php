@@ -46,4 +46,18 @@ class PacienteController extends Controller
 
         return response()->json($pacientes);
     }
+
+    public function getGastoTotalPorPaciente($id)
+    {
+        $idPacientesValor = DB::table('paciente')
+            ->join('consulta', 'paciente.pac_codigo', '=', 'consulta.pac_codigo_id')
+            ->join('cons_proc', 'cons_proc.cons_codigo_id', '=', 'consulta.cons_codigo')
+            ->join('procedimento', 'procedimento.proc_codigo', '=', 'cons_proc.proc_codigo_id')
+            ->where('paciente.pac_codigo', '=', $id)
+            ->groupBy('paciente.pac_codigo', 'paciente.pac_nome')
+            ->select('paciente.pac_codigo', 'paciente.pac_nome', DB::raw('SUM(procedimento.proc_valor) as total'))
+            ->get();
+
+        return response()->json($idPacientesValor);
+    }
 }
