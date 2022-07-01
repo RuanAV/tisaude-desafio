@@ -10,6 +10,7 @@ class Paciente extends Model
     use HasFactory;
 
     protected $table = 'paciente';
+    protected $primaryKey = 'pac_codigo';
 
     public function consultas()
     {

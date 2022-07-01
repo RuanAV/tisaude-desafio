@@ -20,12 +20,24 @@ Route::prefix('v1')->group(function() {
     Route::post('login', [AuthController::class, 'login']);
 
     Route::middleware([ProtectedRouteAuth::class])->group(function() {
+        //paciente
         Route::get('pacientes', [PacienteController::class, 'index']);
+        Route::get('pacientes/{id}', [PacienteController::class, 'getPacienteById']);
+        Route::get('pacientes-procedimento/{id}', [PacienteController::class, 'getProcedimentosRealizedByPaciente']);
+        Route::get('pacientes-planosaude/{id}', [PacienteController::class, 'getPlanosSaudePaciente']);
+        //plano de saude
         Route::get('planos-saude', [PlanoSaudeController::class, 'index']);
+        //medico
         Route::get('medicos', [MedicoController::class, 'index']);
+        Route::get('medicos/{id}', [MedicoController::class, 'getMedicoById']);
+        Route::get('medico-especialidade/{id}', [MedicoController::class, 'getEspecialidadeMedico']);
+        //especialdade
         Route::get('especialidades', [EspecialidadeController::class, 'index']);
+        //consultas
         Route::get('consultas', [ConsultaController::class, 'index']);
+        //procedimentos
         Route::get('procedimentos', [ProcedimentoController::class, 'index']);
+        //extra
         Route::get('users', [UserController::class, 'index']);
         Route::post('logout', [AuthController::class, 'logout']);
         Route::post('me', [AuthController::class, 'me']);

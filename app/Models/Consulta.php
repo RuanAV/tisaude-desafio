@@ -10,6 +10,7 @@ class Consulta extends Model
     use HasFactory;
 
     protected $table = 'consulta';
+    protected $primaryKey = 'cons_codigo';
 
     public function paciente()
     {

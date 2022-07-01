@@ -10,6 +10,7 @@ class PlanoSaude extends Model
     use HasFactory;
 
     protected $table = 'plano_saude';
+    protected $primaryKey = 'plan_codigo';
 
     public function vinculos()
     {

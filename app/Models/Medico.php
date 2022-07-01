@@ -10,6 +10,7 @@ class Medico extends Model
     use HasFactory;
 
     protected $table = 'medico';
+    protected $primaryKey = 'med_codigo';
 
     public function especialidade()
     {

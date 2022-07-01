@@ -10,6 +10,7 @@ class Procedimento extends Model
     use HasFactory;
 
     protected $table = 'procedimento';
+    protected $primaryKey = 'proc_codigo';
 
     public function consultas()
     {
