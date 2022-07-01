@@ -11,5 +11,6 @@ Este desáfio foi realizado para a vaga de desenvolvedor PHP Pleno na empresa Ti
 4. No arquivo .env configure o banco de dados;
 5. Rode no terminal o comando <em>php artisan key:generate</em>;
 6. Rode no terminal o comando <em>php artisan migrate:fresh --seed</em>;
-7. Rode no terminal o comando <em>php artisan serve</em>;
-8. Importe o documento json exportado pelo Insominia.
+7. Rode no terminal o comando <em>php artisan jwt:secret</em>;
+8. Rode no terminal o comando <em>php artisan serve</em>;
+9. Importe o documento json exportado pelo Insominia.
